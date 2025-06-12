@@ -1,0 +1,91 @@
+
+
+ Corporate Internet Banking Services - Application Form 
+
+ 1.CLIENT INFORMATION       Existing Setup ?: [X] Yes [X] No [ ]          Group ID 1034872 
+
+ Date of Application     :   12202024 
+
+ Company Name            :     SSN    TRADING       LIMITED 
+                         :               NORTH            ROAD,    TNAGAR      CHENNAI -     600129 
+Company Address              3684, 
+
+Contact person details 
+                        :     VIRAJ. K 
+Full Name 
+
+Telephone/Mobile No     :   9741767093 
+
+E-mail ID               : viraj@ssntraders.net 
+
+2.Transaction Limits 
+
+  Transaction Type                                    Daily Maximum Corporate Limits 
+  Own Account Transfer                    5,00,000 
+  Within Bank Transfer                   15,00,000 
+  Local Transfers                         3,00;000 
+  Overseas Transfers 
+                                        1,50,65, 000 
+
+  Transaction Type                                    Maximum Per Transacion Limits 
+  Own Account Transfer                    8,00,000 
+  Within Bank Transfer                    15,00,00,000 
+  Local Transfers 
+                                           45,00,000 
+  Overseas Transfers 
+                                           3,00,00,000 
+
+3.Users, Limits and Privileges 
+
+  Users                      Mobile Number and Mail ID Maker Limits Checker Limits      Privilege 
+
+                             B 9761648780             3,00,000      5,00,000     [X] Add [X] Mod [X] Del 
+    Vijay                                                                          View    Auth 
+                             [X]                                                 [X]     [X] 
+                              vijay@gmail.com 
+
+                            B                                                    [ ] Add [ ] Mod [ ] Del 
+    Rakesh                                            3,45,000      6,50,000 
+                            [X] rakesh@gmail.com                                 [X] View [ ] Auth 
+
+                            B   7974344776                                       [X] Add [X] Mod [ ] Del 
+   Karam                                             1,00,000       1,35,000 
+                            [X]                                                 [X] View [ ] Auth 
+                              Kar@gmail.com 
+
+                            B                                                   [ ] Add [ ] Mod [ ] Del 
+
+                            [X]                                                 [ ] View [ ] Auth 
+
+                            8                                                   [ ] Add [ ] Mod [ ] Del 
+
+                            [X]                                                 [ ] View [ ] Auth 
+
+                                                                                              Page No 01 
+<<<
+
+ Accounts and Services Schedule 
+      specify the Accounts and preferred services you wish to use online. 
+                                                                               AS     OAT     WBT      LT      OT 
+  Fill-in "All" or Specific account 
+                                                                               [X]     [X]     [ ]     [X]     [ ] 
+   All 
+                                                                               [ ]     [ ]     [ ]     [ ]     [ ] 
+                                                                               [ ]     [ ]     [ ]     [ ]     [ ] 
+                                                                               [ ]     [ ]     [ ]     [ ]     [ ] 
+                                                                               [ ]     [ ]     [ ]     [ ]     [ ] 
+
+ AS   Account Services         OAT Own Account Transfer       WBT   Within Bank Transfer LT    Local Transfers 
+                                                                                         OT    Overseas Transfers 
+
+5.Beneficiry Information for Mapping 
+
+       Beneficiry Name             Beneficiry A/C No            Bank/Branch code                 E-Mail ID 
+
+                                 93576231                   North Boag Road              vijay@gmail.com 
+     Vijay 
+
+** All Payment products as defined in section 3 will be enable to the beneficiaries mentioned above 
+
+                                                                                                        Page No 02 
+<<<
