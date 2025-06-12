@@ -1,7 +1,7 @@
 import os
 from unstract.llmwhisperer.client_v2 import LLMWhispererClientV2
 import boto3
-from .prompt import Prompt
+from .prompt import Prompt 
 
 class DocumentProcessor:
     def __init__(self, unstract_api_key: str, aws_bedrock_region: str, bedrock_model_id: str):
@@ -32,6 +32,13 @@ class DocumentProcessor:
         Returns:
             bool: True if text extraction and saving were successful, False otherwise.
         """
+        
+        # Getting the directory of the current document_processor.py file
+        current_processor_dir = os.path.dirname(os.path.abspath(__file__))
+
+        # Joining the directory with the filename "ocr.txt"
+        actual_output_file_path = os.path.join(current_processor_dir, output_txt_path)
+        
         try:
             client = LLMWhispererClientV2(api_key=self.unstract_api_key)
             
@@ -43,8 +50,11 @@ class DocumentProcessor:
             
             if 'extraction' in result and 'result_text' in result['extraction']:
                 extracted_text = result['extraction']['result_text']
-                with open(output_txt_path, "w", encoding="utf-8") as f:
-                    f.write(extracted_text)
+                if extracted_text.strip():
+                    
+                    with open(actual_output_file_path, "w", encoding="utf-8") as f:
+                        f.write(extracted_text)
+                    
                 return True
             else:
                 return False
@@ -53,42 +63,33 @@ class DocumentProcessor:
             return False
 
     def process_pdf_to_json_string(self, pdf_file_path: str):
-        """
-        Processes a PDF document: extracts text, saves it to a temporary OCR file,
-        reads from that file, and then sends the content to AWS Bedrock for JSON structuring.
+        ocr_txt_filename = "ocr.txt" # Keep this as just the filename
 
-        Args:
-            pdf_file_path (str): The path to the PDF file to process.
-
-        Returns:
-            str | None: A JSON string containing the structured information from Bedrock,
-                        or None if any step in the process fails.
-        """
-        ocr_txt_file = "ocr.txt"
-
-        # Extract text from PDF and saveing it.
-        extraction_success = self._extract_text_from_pdf_and_save_to_ocr_txt(pdf_file_path, ocr_txt_file)
+        # Get the directory of the current document_processor.py file
+        current_processor_dir = os.path.dirname(os.path.abspath(__file__))
+        actual_ocr_read_path = os.path.join(current_processor_dir, ocr_txt_filename)
+        
+        # Extracting text from PDF and saveing it.
+        extraction_success = self._extract_text_from_pdf_and_save_to_ocr_txt(pdf_file_path, ocr_txt_filename)
 
         if not extraction_success:
             return None
 
-        # Read the extracted text from the saved .txt file.
+        # Read the extracted text from the saved .txt file using its absolute path.
         ocr_text_content = None
         try:
-            if not os.path.exists(ocr_txt_file):
+            if not os.path.exists(actual_ocr_read_path):
                 return None
 
-            with open(ocr_txt_file, "r", encoding="utf-8") as r:
+            with open(actual_ocr_read_path, "r", encoding="utf-8") as r:
                 ocr_text_content = r.read()
         except Exception:
             return None
         
-        
-
         if not ocr_text_content:
             return None
 
-        #  Sending the text content to Bedrock for JSON structuring.
+        # Sending the text content to Bedrock for JSON structuring.
         conversation = [
             {
                 "role": "user",
@@ -109,5 +110,4 @@ class DocumentProcessor:
             response_text = response["output"]["message"]["content"][0]["text"]
             return response_text 
         except Exception:
-          return None
-
+            return None
